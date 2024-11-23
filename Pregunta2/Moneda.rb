@@ -1,4 +1,4 @@
-# Clase Moneda
+# b) Clase Moneda
 class Moneda
   def initialize(number)
     if number < 0
@@ -7,7 +7,7 @@ class Moneda
     @number = number
   end
 
-  # Metodo que convierte una moneda a otra
+  # b) Metodo que convierte una moneda a otra
   def en(clase)
     case clase
     when :dolares
@@ -25,7 +25,7 @@ class Moneda
     end
   end
 
-# Metodo que compara dos monedas
+# c) Metodo que compara dos monedas
 def comparar(otra_moneda)
   # Determinar la clase actual como símbolo
   clase_actual = case self.class.name
@@ -50,7 +50,6 @@ def comparar(otra_moneda)
   end
 end
 
-
   def number
     @number
   end
@@ -61,7 +60,7 @@ end
 end
 
 # Clases de las monedas
-# Los datos de conversion son actuales
+# b) Los datos de conversion son actuales
 class Dolar < Moneda
   def en(clase)
     case clase
@@ -177,7 +176,7 @@ class Bitcoin < Moneda
   end
 end
 
-# Clase Float, para agregar metodos a los numeros
+# a) Clase Float, para agregar metodos a los numeros
 class Float
   def dolares
     Dolar.new(self)
