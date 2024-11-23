@@ -2,7 +2,7 @@
 def producto_cartesiano(arreglo1, arreglo2)
   for i in 0..arreglo1.length-1
     for j in 0..arreglo2.length-1
-      puts "[:#{arreglo1[i]}, #{arreglo2[j]}]"
+      yield [arreglo1[i], arreglo2[j]]
     end
   end
 end
@@ -10,4 +10,7 @@ end
 # Pruebas
 arreglo1 = [:a, :b, :c]
 arreglo2 = [4, 5]
-producto_cartesiano(arreglo1, arreglo2)
+
+producto_cartesiano(arreglo1, arreglo2) do |par|
+  puts par.inspect
+end
